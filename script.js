@@ -16,7 +16,6 @@ document.getElementById('startTimer').addEventListener('click', ()=>{
      // event listener for stop function
 
 document.getElementById('stopTimer').addEventListener('click', ()=>{
-     startTimer.innerHTML='RESUME';
     clearInterval(int);
 });
 
