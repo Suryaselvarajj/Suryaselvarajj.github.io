@@ -1,6 +1,10 @@
+    // defining the necessary values
+
 let [milliseconds,seconds,minutes] = [0,0,0];
 let timerRef = document.querySelector('.timer');
 let int = null;
+
+ // event listener for Start function
 
 document.getElementById('startTimer').addEventListener('click', ()=>{
     if(int!==null){
@@ -9,15 +13,22 @@ document.getElementById('startTimer').addEventListener('click', ()=>{
     int = setInterval(displayTimer,10);
 });
 
+     // event listener for stop function
+
 document.getElementById('stopTimer').addEventListener('click', ()=>{
+     startTimer.innerHTML='RESUME';
     clearInterval(int);
 });
+
+     // event listener for resume function
 
 document.getElementById('resetTimer').addEventListener('click', ()=>{
     clearInterval(int);
     [milliseconds,seconds,minutes] = [0,0,0];
     timerRef.innerHTML = ' 00 : 00 : 00 ';
 });
+
+ // Show time function to calculate and display the time in the display
 
 function displayTimer(){
     milliseconds+=10;
